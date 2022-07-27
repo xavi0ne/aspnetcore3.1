@@ -1,4 +1,14 @@
 # ASP.NET Core
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'azure'
+    appType: 'webApp'
+    appName: 'mysite'
+    deployToSlotOrASE: true
+    resourceGroupName: 'ContosoASE'
+    slotName: 'stage'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
